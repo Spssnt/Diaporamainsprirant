@@ -2,72 +2,56 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Diaporama</title>
 <style>
   body {
-    margin: 0; 
-    display: flex; 
-    justify-content: center; 
-    align-items: center; 
-    height: 100vh; 
-    background: #f5f1e7; /* fond beige clair */
+    margin: 0; padding: 0; background: #f5f1e7;
+    display: flex; justify-content: center; align-items: center;
+    height: 100vh;
   }
-  #container {
-    position: relative; 
-    background: #f5f1e7; /* fond beige */
-    border-radius: 12px; 
-    overflow: hidden; 
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    transition: width 0.5s ease, height 0.5s ease; /* animation dimension */
-  }
-  #slideshow img {
-    display: none;
-    width: 100%; 
-    height: auto; 
+  #slideshow-container {
+    width: 700px; height: 450px;
+    background: #f5f1e7;
     border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    position: relative;
   }
-  #slideshow img.active {
+  #slideshow-container img {
+    position: absolute; top: 0; left: 0;
+    max-width: 100%; max-height: 100%;
+    object-fit: contain;
+    border-radius: 12px;
+    display: none;
+  }
+  #slideshow-container img.active {
     display: block;
   }
 </style>
 </head>
 <body>
-
-<div id="container">
-  <div id="slideshow">
-    <img src="https://images.unsplash.com/photo-1553002401-c0945c2ff0b0?q=80&w=1035&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Image 1" class="active"/>
-    <img src="https://images.unsplash.com/photo-1549281899-f75600a24107?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Image 2" />
-    <img src="https://images.unsplash.com/photo-1515566007586-7d394e4092e3?q=80&w=927&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Image 3" />
-    <img src="https://images.unsplash.com/photo-1531857454108-c65232a962a8?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Image 4" />
-    <img src="https://images.unsplash.com/photo-1501747315-124a0eaca060?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Image 5" />
-    <img src="https://images.unsplash.com/photo-1577640256262-8488aa247e17?q=80&w=1064&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Image 6" />
-    <img src="https://images.unsplash.com/photo-1528716321680-815a8cdb8cbe?q=80&w=1076&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Image 7" />
-    <img src="https://images.unsplash.com/photo-1568849676085-51415703900f?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Image 8" />
-    <img src="https://images.unsplash.com/photo-1549633030-89d0743bad01?q=80&w=3024&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Image 9" />
-    <img src="https://images.unsplash.com/photo-1752951700087-f96510057dd7?q=80&w=974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Image 10" />
+  <div id="slideshow-container">
+    <img src="https://images.unsplash.com/photo-1553002401-c0945c2ff0b0?q=80&w=1035&auto=format&fit=crop" alt="Image 1" class="active" />
+    <img src="https://images.unsplash.com/photo-1549281899-f75600a24107?q=80&w=2071&auto=format&fit=crop" alt="Image 2" />
+    <img src="https://images.unsplash.com/photo-1515566007586-7d394e4092e3?q=80&w=927&auto=format&fit=crop" alt="Image 3" />
+    <img src="https://images.unsplash.com/photo-1531857454108-c65232a962a8?q=80&w=1974&auto=format&fit=crop" alt="Image 4" />
+    <img src="https://images.unsplash.com/photo-1501747315-124a0eaca060?q=80&w=987&auto=format&fit=crop" alt="Image 5" />
+    <img src="https://images.unsplash.com/photo-1577640256262-8488aa247e17?q=80&w=1064&auto=format&fit=crop" alt="Image 6" />
+    <img src="https://images.unsplash.com/photo-1528716321680-815a8cdb8cbe?q=80&w=1076&auto=format&fit=crop" alt="Image 7" />
+    <img src="https://images.unsplash.com/photo-1568849676085-51415703900f?q=80&w=987&auto=format&fit=crop" alt="Image 8" />
+    <img src="https://images.unsplash.com/photo-1549633030-89d0743bad01?q=80&w=3024&auto=format&fit=crop" alt="Image 9" />
+    <img src="https://images.unsplash.com/photo-1752951700087-f96510057dd7?q=80&w=974&auto=format&fit=crop" alt="Image 10" />
   </div>
-</div>
 
-<script>
-  const container = document.getElementById('container');
-  const images = document.querySelectorAll('#slideshow img');
-  let current = 0;
-
-  function adjustContainerSize() {
-    const img = images[current];
-    container.style.width = img.naturalWidth + 'px';
-    container.style.height = img.naturalHeight + 'px';
-  }
-
-  setInterval(() => {
-    images[current].classList.remove('active');
-    current = (current + 1) % images.length;
-    images[current].classList.add('active');
-    adjustContainerSize();
-  }, 4000);
-
-  // Ajuster la taille au chargement initial quand l'image est prête
-  images[0].onload = adjustContainerSize;
-</script>
-
+  <script>
+    const images = document.querySelectorAll('#slideshow-container img');
+    let current = 0;
+    setInterval(() => {
+      images[current].classList.remove('active');
+      current = (current + 1) % images.length;
+      images[current].classList.add('active');
+    }, 4000);
+  </script>
 </body>
 </html>

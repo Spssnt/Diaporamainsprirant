@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<style>
+  body {
+    margin: 0; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    height: 100vh; 
+    background: #f5f1e7; /* fond beige clair */
+  }
+  #container {
+    position: relative; 
+    width: 600px; 
+    height: 400px;
+    background: #f5f1e7; /* fond beige autour */
+    border-radius: 12px; 
+    overflow: hidden; 
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+  #slideshow img {
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    position: absolute; 
+    opacity: 0; 
+    transition: opacity 1s ease-in-out;
+    border-radius: 12px;
+  }
+  #slideshow img.active {
+    opacity: 1;
+    position: relative;
+  }
+</style>
+</head>
+<body>
+
+<div id="container">
+  <div id="slideshow">
+    <img src="https://unsplash.com/fr/photos/des-routes-difficiles-menent-a-de-belles-destinations-decor-de-bureau-z1d-LP8sjuI" class="active" alt="Image 1" />
+    <img src="https://unsplash.com/fr/photos/photo-de-mise-au-point-peu-profonde-dun-appareil-photo-reflex-noir-sur-une-etagere-en-bois-blanc-NSKP7Gwa_I0" alt="Image 2" />
+    <img src="https://unsplash.com/fr/photos/velo-blanc-gare-V83v-MYB_Z8" alt="Image 3" />
+    <img src="https://unsplash.com/fr/photos/toddler-looking-at-believe-in-yourself-graffiti-yMg_SMqfoRU" alt="Image 4" />
+    <img src="hhttps://unsplash.com/fr/photos/personne-debout-sur-une-colline-rocheuse-pendant-la-journee-V80TdZAnNzU" alt="Image 5" />
+    <img src="https://unsplash.com/fr/photos/signaletique-blanche-et-noire-5d5DSRQ5dUc" alt="Image 6" />
+    <img src="https://unsplash.com/fr/photos/reveillez-vous-kick-ass-soyez-gentil-repetez-le-mur-de-verre-imprime-UJij-wz7w88" alt="Image 7" />
+    <img src="https://unsplash.com/fr/photos/photographie-a-plat-de-feuilles-avec-une-tasse-de-cafe-et-trois-macarons-sur-une-planche-a-decouper-EAay7Aj4jbc" alt="Image 8" />
+    <img src="https://unsplash.com/fr/photos/fleur-jaune-dans-une-lentille-a-bascule-et-decentrement-SfODGZo9cJw" alt="Image 9" />
+    <img src="https://unsplash.com/fr/photos/billboard-dit-tant-de-gens-aiment-vous-avoir-autour-de-vous-ozJaG-y-yiM" alt="Image 10" />
+  </div>
+</div>
+
+<script>
+  const images = document.querySelectorAll('#slideshow img');
+  let current = 0;
+
+  setInterval(() => {
+    images[current].classList.remove('active');
+    current = (current + 1) % images.length;
+    images[current].classList.add('active');
+  }, 4000);
+</script>
+
+</body>
+</html>
